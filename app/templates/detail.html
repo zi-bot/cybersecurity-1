@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block judul %}Pesanan {{ pesanan['nomor'] }}{% endblock %}
+{% block isi %}
+<section class="kartu">
+  <h1>Pesanan {{ pesanan['nomor'] }}</h1>
+
+  <dl class="ringkas">
+    <dt>Pelanggan</dt><dd>{{ pesanan['nama_pelanggan'] }}</dd>
+    <dt>Alamat</dt><dd>{{ pesanan['alamat'] }}</dd>
+    <dt>Kontak</dt><dd>{{ pesanan['kontak'] }}</dd>
+    <dt>Tanggal</dt><dd>{{ pesanan['tanggal'] }}</dd>
+    <dt>Jumlah</dt><dd>Rp {{ '{:,}'.format(pesanan['jumlah']).replace(',', '.') }}</dd>
+    <dt>Status</dt><dd><span class="lencana">{{ pesanan['status'] }}</span></dd>
+    <dt>Catatan</dt><dd>{{ pesanan['catatan'] or '-' }}</dd>
+  </dl>
+
+  <p class="petunjuk">
+    <a href="{{ url_for('unduh_faktur', pid=pesanan['id']) }}">Unduh faktur pesanan</a>
+  </p>
+
+  <h2>Item</h2>
+  <table>
+    <thead><tr><th>Barang</th><th>Qty</th><th>Harga</th><th>Subtotal</th></tr></thead>
+    <tbody>
+      {% for b in barang %}
+      <tr>
+        <td>{{ b['nama_barang'] }}</td>
+        <td>{{ b['qty'] }}</td>
+        <td>Rp {{ '{:,}'.format(b['harga']).replace(',', '.') }}</td>
+        <td>Rp {{ '{:,}'.format(b['qty'] * b['harga']).replace(',', '.') }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+  <h2>Riwayat Status</h2>
+  {% if riwayat %}
+  <table>
+    <thead><tr><th>Status</th><th>Diubah oleh</th><th>Waktu</th></tr></thead>
+    <tbody>
+      {% for r in riwayat %}
+      <tr><td>{{ r['status'] }}</td><td>{{ r['diubah_oleh'] }}</td><td>{{ r['waktu'] }}</td></tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p class="petunjuk">Belum ada riwayat.</p>
+  {% endif %}
+
+  <h2>Ubah Status</h2>
+  <form method="post" action="{{ url_for('ubah_status', pid=pesanan['id']) }}">
+    <label>Status baru
+      <select name="status">
+        <option>Baru</option>
+        <option>Diproses</option>
+        <option>Dikirim</option>
+        <option>Selesai</option>
+        <option>Dibatalkan</option>
+      </select>
+    </label>
+    <button type="submit">Simpan</button>
+  </form>
+
+  <h2>Ubah Jumlah</h2>
+  <form method="post" action="{{ url_for('ubah_jumlah', pid=pesanan['id']) }}">
+    <label>Nilai transaksi (rupiah)
+      <input name="jumlah" value="{{ pesanan['jumlah'] }}" autocomplete="off">
+    </label>
+    <button type="submit">Simpan jumlah</button>
+  </form>
+</section>
+{% endblock %}

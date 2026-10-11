@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+{% block judul %}Pesanan Baru{% endblock %}
+{% block isi %}
+<section class="kartu">
+  <h1>Pesanan Baru</h1>
+
+  <form method="post">
+    <label>Pelanggan
+      <select name="pelanggan_id">
+        {% for p in daftar_pelanggan %}
+        <option value="{{ p['id'] }}"
+          {% if user['pelanggan_id'] == p['id'] %}selected{% endif %}>{{ p['nama'] }}</option>
+        {% endfor %}
+      </select>
+    </label>
+
+    <label>Nomor pesanan
+      <input name="nomor" autocomplete="off" required>
+    </label>
+
+    <label>Barang
+      <input name="nama_barang" autocomplete="off" required>
+    </label>
+
+    <label>Kuantitas
+      <input name="qty" value="1" autocomplete="off">
+    </label>
+
+    <label>Harga satuan
+      <input name="harga" value="0" autocomplete="off">
+    </label>
+
+    <label>Nilai transaksi (rupiah)
+      <input name="jumlah" value="0" autocomplete="off">
+    </label>
+
+    <label>Catatan
+      <input name="catatan" autocomplete="off">
+    </label>
+
+    <button type="submit">Simpan pesanan</button>
+  </form>
+
+  <p class="petunjuk"><a href="{{ url_for('beranda') }}">Kembali ke daftar pesanan</a></p>
+</section>
+{% endblock %}

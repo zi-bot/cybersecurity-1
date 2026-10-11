@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block judul %}Layanan Pemesanan B2B{% endblock %}</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<header class="topbar">
+  <div class="merek">PT Nusantara Pasok Digital <span class="lingkungan">LAB</span></div>
+  <nav>
+    {% if user %}
+      <span class="pengguna">{{ user['nama'] }} &middot; <em>{{ user['peran'] }}</em></span>
+      <a href="{{ url_for('beranda') }}">Pesanan</a>
+      <a href="{{ url_for('laporan_bulanan') }}">Laporan Bulanan</a>
+      <a href="{{ url_for('keluar') }}">Keluar</a>
+    {% endif %}
+  </nav>
+</header>
+
+<main>
+  {% with pesan = get_flashed_messages() %}
+    {% if pesan %}<div class="notis">{% for p in pesan %}<p>{{ p }}</p>{% endfor %}</div>{% endif %}
+  {% endwith %}
+  {% block isi %}{% endblock %}
+</main>
+
+<footer>
+  Lingkungan laboratorium
+</footer>
+</body>
+</html>

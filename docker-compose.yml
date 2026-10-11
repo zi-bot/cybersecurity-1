@@ -1,0 +1,20 @@
+# BAB 1 — Layanan Pemesanan B2B fiktif
+# Jalankan:  docker compose up -d      lalu buka http://localhost:8081
+# Hentikan : docker compose down --volumes
+services:
+  layanan-pemesanan:
+    build: .
+    container_name: lab1-pemesanan
+    ports:
+
+      - "127.0.0.1:8081:8081"
+    volumes:
+      - data-pesanan:/srv/data
+    # batas sumber daya kontainer
+    deploy:
+      resources:
+        limits:
+          cpus: "0.50"
+          memory: 256M
+volumes:
+  data-pesanan:

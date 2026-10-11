@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block judul %}Laporan Bulanan{% endblock %}
+{% block isi %}
+<section class="kartu sempit">
+  <h1>Laporan Bulanan</h1>
+  <p>Rekapitulasi seluruh pesanan pada periode berjalan.</p>
+  <dl class="ringkas">
+    <dt>Jumlah pesanan</dt><dd>{{ jumlah }}</dd>
+    <dt>Total terkumpul</dt><dd>{{ total }}</dd>
+    <dt>Waktu proses</dt><dd>{{ detik }} detik</dd>
+  </dl>
+  <p class="petunjuk">Muat ulang halaman ini untuk memperbarui rekapitulasi.</p>
+
+  <h2>Ekspor</h2>
+  <p class="petunjuk"><a href="{{ url_for('ekspor_csv') }}">Unduh rekapitulasi (CSV)</a></p>
+
+  <h2>Proses Terjadwal</h2>
+  <p class="petunjuk">Proses berkala yang memajukan status pesanan satu langkah.</p>
+  <form method="post" action="{{ url_for('picu_proses_terjadwal') }}">
+    <button type="submit">Jalankan proses terjadwal</button>
+  </form>
+</section>
+{% endblock %}

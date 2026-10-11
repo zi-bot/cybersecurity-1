@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block judul %}Pesanan Saya{% endblock %}
+{% block isi %}
+<section class="kartu">
+  <h1>Pesanan</h1>
+  <p class="petunjuk">Menampilkan pesanan milik akun <strong>{{ user['nama'] }}</strong>.</p>
+  {% if pesanan %}
+  <table>
+    <thead>
+      <tr><th>Nomor</th><th>Tanggal</th><th>Jumlah</th><th>Status</th><th></th></tr>
+    </thead>
+    <tbody>
+      {% for p in pesanan %}
+      <tr>
+        <td>{{ p['nomor'] }}</td>
+        <td>{{ p['tanggal'] }}</td>
+        <td>Rp {{ '{:,}'.format(p['jumlah']).replace(',', '.') }}</td>
+        <td><span class="lencana">{{ p['status'] }}</span></td>
+        <td><a href="{{ url_for('detail_pesanan', pid=p['id']) }}">Buka</a></td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>Belum ada pesanan.</p>
+  {% endif %}
+
+  <p class="petunjuk"><a href="{{ url_for('buat_pesanan') }}">Buat pesanan baru</a></p>
+</section>
+{% endblock %}

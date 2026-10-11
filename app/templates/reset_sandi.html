@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block judul %}Setel Ulang Sandi{% endblock %}
+{% block isi %}
+<section class="kartu sempit">
+  <h1>Setel Ulang Sandi</h1>
+
+  {% if pesan %}
+  <p class="petunjuk">{{ pesan }}</p>
+  <p class="petunjuk"><a href="{{ url_for('masuk') }}">Masuk sekarang</a></p>
+  {% else %}
+  <form method="post" action="{{ url_for('reset_sandi', token=token) }}">
+    <label>Sandi baru
+      <input name="sandi" type="password" required>
+    </label>
+    <button type="submit">Simpan sandi baru</button>
+  </form>
+  {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block judul %}Lupa Sandi{% endblock %}
+{% block isi %}
+<section class="kartu sempit">
+  <h1>Lupa Sandi</h1>
+  <p>Masukkan nama pengguna Anda untuk memperoleh tautan pengaturan ulang sandi.</p>
+
+  <form method="post">
+    <label>Nama pengguna
+      <input name="nama" autocomplete="off" required>
+    </label>
+    <button type="submit">Minta tautan</button>
+  </form>
+
+  {% if token %}
+  <h2>Tautan pengaturan ulang</h2>
+  <p class="petunjuk">Buka tautan berikut untuk menyetel sandi baru:</p>
+  <p><a href="{{ url_for('reset_sandi', token=token) }}">reset-sandi?token={{ token }}</a></p>
+  {% endif %}
+
+  <p class="petunjuk"><a href="{{ url_for('masuk') }}">Kembali ke halaman masuk</a></p>
+</section>
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+{% block judul %}Masuk{% endblock %}
+{% block isi %}
+<section class="kartu sempit">
+  <h1>Masuk</h1>
+  <form method="post">
+    <label>Nama pengguna
+      <input name="nama" autocomplete="off" required>
+    </label>
+    <label>Sandi
+      <input name="sandi" type="password" required>
+    </label>
+    <button type="submit">Masuk</button>
+  </form>
+
+  <p class="petunjuk"><a href="{{ url_for('lupa_sandi') }}">Lupa sandi?</a></p>
+</section>
+{% endblock %}

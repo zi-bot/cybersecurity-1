@@ -1,0 +1,71 @@
+:root {
+  --tinta: #1b2430;
+  --pudar: #5d6b7a;
+  --garis: #d8dee6;
+  --latar: #f4f6f9;
+  --aksen: #1f5f8b;
+  --aksen-lembut: #e6eff6;
+}
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  color: var(--tinta);
+  background: var(--latar);
+  line-height: 1.5;
+}
+.topbar {
+  display: flex; align-items: center; justify-content: space-between;
+  gap: 16px; padding: 12px 22px;
+  background: var(--aksen); color: #fff;
+}
+.merek { font-weight: 600; letter-spacing: .2px; }
+.lingkungan {
+  font-size: 11px; font-weight: 700; letter-spacing: 1px;
+  background: rgba(255,255,255,.22); border-radius: 3px;
+  padding: 1px 6px; margin-left: 6px; vertical-align: 2px;
+}
+.topbar nav { display: flex; align-items: center; gap: 14px; font-size: 14px; }
+.topbar a { color: #fff; text-decoration: none; border-bottom: 1px solid transparent; }
+.topbar a:hover { border-bottom-color: rgba(255,255,255,.7); }
+.pengguna { opacity: .9; font-size: 13px; }
+main { max-width: 960px; margin: 26px auto; padding: 0 18px; }
+.kartu {
+  background: #fff; border: 1px solid var(--garis); border-radius: 8px;
+  padding: 22px 24px; box-shadow: 0 1px 2px rgba(27,36,48,.05);
+}
+.kartu.sempit { max-width: 460px; }
+h1 { font-size: 21px; margin: 0 0 14px; }
+h2 { font-size: 16px; margin: 24px 0 10px; }
+table { width: 100%; border-collapse: collapse; font-size: 14px; }
+th, td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--garis); }
+th { background: var(--aksen-lembut); font-size: 12.5px; text-transform: uppercase;
+     letter-spacing: .4px; color: var(--pudar); }
+.lencana {
+  display: inline-block; font-size: 12px; padding: 2px 8px;
+  border-radius: 999px; background: var(--aksen-lembut); color: var(--aksen);
+}
+.ringkas { display: grid; grid-template-columns: 160px 1fr; gap: 6px 14px;
+           font-size: 14px; margin: 0 0 8px; }
+.ringkas dt { color: var(--pudar); }
+.ringkas dd { margin: 0; }
+form { display: grid; gap: 12px; margin-top: 8px; }
+label { display: grid; gap: 5px; font-size: 13.5px; color: var(--pudar); }
+input, select {
+  font: inherit; padding: 8px 10px; border: 1px solid var(--garis);
+  border-radius: 6px; background: #fff; color: var(--tinta);
+}
+button {
+  font: inherit; font-weight: 600; padding: 9px 16px; border: 0;
+  border-radius: 6px; background: var(--aksen); color: #fff; cursor: pointer;
+  justify-self: start;
+}
+button:hover { background: #17496b; }
+.petunjuk { font-size: 13px; color: var(--pudar); }
+.notis {
+  background: #fff8e1; border: 1px solid #f0dca0; border-radius: 6px;
+  padding: 10px 14px; margin-bottom: 16px; font-size: 14px;
+}
+.notis p { margin: 0; }
+footer { text-align: center; font-size: 12.5px; color: var(--pudar);
+         padding: 26px 18px 34px; }
