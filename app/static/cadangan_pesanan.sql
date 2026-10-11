@@ -1,8 +1,8 @@
 -- ============================================================================
 -- cadangan_pesanan.sql — cadangan basis data layanan pemesanan B2B
 --
--- Data uji laboratorium (fiktif). Tidak ada data pribadi maupun kredensial
--- nyata. Jangan dipakai di luar laboratorium.
+-- Data uji praktikum (fiktif). Tidak ada data pribadi maupun kredensial
+-- nyata. Jangan dipakai di luar praktikum.
 --
 -- Dibuat: 2026-08-31 23:14 oleh operator1 (prosedur pencadangan manual)
 -- ============================================================================

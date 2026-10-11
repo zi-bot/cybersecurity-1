@@ -4,7 +4,7 @@ Layanan Pemesanan B2B fiktif — laboratorium audit CIA (BAB 1).
 PERINGATAN: aplikasi ini SENGAJA dikonfigurasi lemah untuk keperluan praktikum
 audit kerahasiaan, integritas, dan ketersediaan. Jangan dijalankan pada jaringan
 yang dapat dijangkau pihak lain, dan jangan memakai data atau kredensial nyata.
-Lihat README.md dan 00_Lintas_BAB/lembar_izin_laboratorium.md.
+Lihat README.md.
 
 Jalankan tanpa Docker:
     pip install flask

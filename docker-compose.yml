@@ -1,5 +1,5 @@
 # BAB 1 — Layanan Pemesanan B2B fiktif
-# Jalankan:  docker compose up -d      lalu buka http://localhost:8081
+# Jalankan:  docker compose up -d lalu buka http://localhost:8081
 # Hentikan : docker compose down --volumes
 services:
   layanan-pemesanan:
