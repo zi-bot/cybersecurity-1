@@ -242,7 +242,7 @@ docker compose down --volumes
 
 ## 9. Kalau Anda buntu
 
-1. Baca ulang bagian **Kisi-kisi** di atas dan pilih satu arah saja.
+1. Baca ulang bagian **Spoiler** di atas dan pilih satu arah saja.
 2. Jalankan ulang langkah dengan `curl -i` supaya Anda melihat **seluruh** permintaan dan respons,
    bukan hanya yang tampil di layar.
 3. Bandingkan apa yang Anda lihat dengan apa yang seharusnya ada (perbedaan itulah temuan Anda).
