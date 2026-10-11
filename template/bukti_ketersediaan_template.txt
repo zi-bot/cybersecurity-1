@@ -1,0 +1,17 @@
+ASET                : <ID aset> — <nama aset>
+KOMPONEN CIA        : Ketersediaan
+LANGKAH REPRODUKSI  :
+  1. <langkah 1>
+  2. <langkah 2>
+  3. <langkah 3>
+WAKTU MULAI         : <jam:menit:detik>
+LAMA TIDAK RESPONSIF: <detik / menit>
+DAMPAK PER PERAN    : <pelanggan / operator / administrator — apa yang tidak bisa mereka lakukan>
+TINDAK PEMULIHAN    : <perintah atau langkah yang dipakai untuk memulihkan>
+WAKTU PULIH         : <jam:menit:detik — layanan kembali normal>
+TANGKAPAN LAYAR     :
+  - bukti_ketersediaan_<ID aset>_01.png  — <layanan tidak responsif / galat waktu tunggu>
+  - bukti_ketersediaan_<ID aset>_02.png  — <layanan kembali normal>
+  (opsional: hapus baris ini bila Anda memakai potongan log saja)
+KONTROL USULAN      : <kontrol + siapa pemiliknya>
+STATUS AKHIR        : layanan kembali normal, tidak ada perubahan tertinggal

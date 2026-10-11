@@ -1,0 +1,21 @@
+ASET                : <ID aset> — <nama aset>
+KOMPONEN CIA        : Integritas
+PERAN UJI           : <peran yang Anda pakai>
+PERAN BERWENANG     : <peran yang seharusnya berwenang mengubah nilai ini>
+LANGKAH REPRODUKSI  :
+  1. <langkah 1>
+  2. <langkah 2>
+  3. <langkah 3>
+SEBELUM              :
+<nilai sebelum perubahan + sumbernya (halaman / keluaran perintah)>
+PERMINTAAN          :
+<tempelkan permintaan lengkap>
+SESUDAH              :
+<nilai sesudah perubahan — buktikan perubahan bertahan setelah halaman dimuat ulang>
+TANGKAPAN LAYAR     :
+  - bukti_integritas_<ID aset>_01.png  — <nilai SEBELUM, terlihat di layar>
+  - bukti_integritas_<ID aset>_02.png  — <nilai SESUDAH, terlihat di layar>
+  (opsional: hapus baris ini bila Anda memakai potongan log saja)
+REKAM PERUBAHAN     : <ada / tidak ada — tunjukkan buktinya>
+KONTROL USULAN      : <kontrol + siapa pemiliknya>
+STATUS AKHIR        : nilai dikembalikan seperti semula

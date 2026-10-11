@@ -1,0 +1,18 @@
+ASET                : <ID aset> — <nama aset>
+KOMPONEN CIA        : Kerahasiaan
+PERAN UJI           : <peran berhak paling rendah yang Anda pakai>
+LANGKAH REPRODUKSI  :
+  1. <langkah 1>
+  2. <langkah 2>
+  3. <langkah 3>
+PERMINTAAN          :
+<tempelkan permintaan lengkap, mis. keluaran `curl -i`>
+RESPONS             :
+<tempelkan respons lengkap>
+TANGKAPAN LAYAR     :
+  - bukti_kerahasiaan_<ID aset>_01.png  — <apa yang terlihat pada gambar>
+  - bukti_kerahasiaan_<ID aset>_02.png  — <apa yang terlihat pada gambar>
+  (opsional: hapus baris ini bila Anda memakai potongan log saja)
+MENGAPA BERHASIL    : <kontrol apa yang tidak ada atau salah konfigurasi>
+KONTROL USULAN      : <kontrol + siapa pemiliknya>
+STATUS AKHIR        : nilai dikembalikan seperti semula

@@ -9,7 +9,7 @@ kerahasiaan, integritas, dan ketersediaan pada layanan pemesanan B2B fiktif mili
 
 ---
 
-## ⚠️ 1. Baca dulu — aturan main
+## ⚠️ 1. Baca dulu
 
 **Sebelum menyentuh apa pun:**
 
@@ -31,6 +31,28 @@ kerahasiaan, integritas, dan ketersediaan pada layanan pemesanan B2B fiktif mili
 |---|---|---|
 | 1 | **Risk register** | Spreadsheet `Praktikum1_<NIM>_<Nama>.xlsx`, 3 sheet: `Inventaris Aset`, `Matriks Risiko`, `Rencana Kontrol` |
 | 2 | **Lampiran bukti** | Folder `bukti_<NIM>/`, narasi maksimal **2 halaman** |
+
+**Template siap isi — Anda tidak perlu membuat berkas dari nol.**
+
+- Salin `template/Praktikum1_template.xlsx` menjadi `Praktikum1_<NIM>_<Nama>.xlsx`. Ketiga sheet
+  sudah ada beserta judul kolomnya, dan **rumus Skor serta Prioritas sudah terpasang** — Anda
+  cukup mengisi sel yang ditandai.
+- Kerangka berkas bukti ada di `template/bukti_kerahasiaan_template.txt`,
+  `template/bukti_integritas_template.txt`, dan `template/bukti_ketersediaan_template.txt`.
+  Salin, ganti namanya sesuai skema `bukti_<pilar>_<ID aset>.txt`, lalu isi.
+
+**Bentuk bukti yang diterima.** Modul dan Lampiran memperbolehkan tiga bentuk: pasangan
+permintaan/respons, **tangkapan layar**, dan potongan log. Pilih yang paling kuat membuktikan
+temuan Anda — ketiganya boleh digabung dalam satu temuan.
+
+| Berkas | Wajib? | Isi |
+|---|---|---|
+| `bukti_<pilar>_<ID aset>.txt` | **ya** | catatan tertulis: permintaan/respons, potongan log, langkah reproduksi |
+| `bukti_<pilar>_<ID aset>_<nn>.png` | opsional | tangkapan layar, **namanya disebut di dalam `.txt`** |
+
+Berkas `.txt` tetap wajib karena itulah yang Anda tautkan pada kolom `Bukti` di risk register.
+Tangkapan layar disimpan berdampingan di folder `bukti_<NIM>/` dan dirujuk dari dalam `.txt`,
+sehingga penilai dapat menemukannya. Contoh: `bukti_kerahasiaan_A-02_01.png`.
 
 **Ambang minimal modul:** ≥10 temuan dengan ID unik, yang memuat **bukti pelanggaran CIA** (
 kerahasiaan, integritas, ketersediaan) yang dapat direproduksi. Temuan tanpa bukti yang
