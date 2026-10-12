@@ -12,8 +12,10 @@ COPY app/ ./app/
 COPY db/  ./db/
 
 # Seed dijalankan saat start bila basis data belum ada
+# sed menghapus CR: klon di Windows dapat mengubah akhir baris menjadi CRLF
+# sehingga shebang gagal dengan galat "no such file or directory".
 COPY docker-entrypoint.sh /usr/local/bin/docker-entrypoint.sh
-RUN chmod +x /usr/local/bin/docker-entrypoint.sh
+RUN sed -i 's/\r$//' /usr/local/bin/docker-entrypoint.sh && chmod +x /usr/local/bin/docker-entrypoint.sh
 
 EXPOSE 8081
 ENTRYPOINT ["/usr/local/bin/docker-entrypoint.sh"]

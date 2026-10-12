@@ -250,6 +250,7 @@ mana, tuliskan alasannya.
 | Layanan tidak pulih setelah uji ketersediaan | Kuota terlampaui / snapshot belum diambil | Mulai ulang kontainer atau kembalikan snapshot, catat waktu pemulihan |
 | `docker compose` gagal terhubung | Docker belum berjalan | Jalankan Docker Desktop, cek `docker info` |
 | Port 8081 sudah dipakai | Kontainer lama masih hidup | `docker compose down` lalu `up -d` lagi |
+| Kontainer langsung berhenti: `exec /usr/local/bin/docker-entrypoint.sh: no such file or directory` | Klon di Windows mengubah akhir baris `.sh` menjadi CRLF | `git pull`, lalu `docker compose build --no-cache && docker compose up -d` |
 
 ---
 

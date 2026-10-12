@@ -1,0 +1,4 @@
+# Paksa akhir baris LF. Klon di Windows (core.autocrlf) mengubah .sh menjadi
+# CRLF sehingga shebang gagal: "exec ... no such file or directory".
+*.sh text eol=lf
+Dockerfile text eol=lf
